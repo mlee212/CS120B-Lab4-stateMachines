@@ -27,7 +27,7 @@ void Tick() {
 			state = wait; 
 		break;
 		case wait:
-			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04) {
+			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04 || (PINA & 0x80) == 0x80) {
 				if(but3 == 0x04)
 					state = s0;
 				else if(lock == 0x80)
@@ -39,7 +39,7 @@ void Tick() {
 				state = wait;
 		break;
 		case s0:
-			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04) {
+			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04 || (PINA & 0x80) == 0x80) {
 				if(but3 == 0x00)
 					state = s0release;
 				else if(lock == 0x80)
@@ -52,11 +52,11 @@ void Tick() {
 
 		break;
 		case s0release:
-			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04) {
+			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04 || (PINA & 0x80) == 0x80) {
 				if(but2 == 0x02)
 					state = s1;
 				else if(lock == 0x80)
-					state = s1release;
+					state = reset;
 				else
 				state = s0release;
 			}
@@ -65,7 +65,7 @@ void Tick() {
 
 		break;
 		case s1:
-			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04) {
+			if((PINA & 0x07) == 0x01 || (PINA & 0x07) == 0x02 || (PINA & 0x07) == 0x04 || (PINA & 0x80) == 0x80) {
 				if(but2 == 0x00)
 					state = s1release;
 				else if(lock == 0x80)
