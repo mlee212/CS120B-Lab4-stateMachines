@@ -1,0 +1,10 @@
+No source file named main.c.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+test/initDebugger.gdb:13: Error in sourced command file:
+Argument required (one or more breakpoint numbers).
+======================================================
+Running all tests..."
+
+"PINA: 0x01, 0x00, 0x02 => PORTB: 1, state: pressA1"...test/tests.gdb:43: Error in sourced command file:
+No symbol "start" in current context.
+Quitting: Remote doesn't know how to detach
