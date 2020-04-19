@@ -78,10 +78,7 @@ void Tick() {
 
 		break;
 		case s1release:
-			if(lock == 0x80)
-				state = reset;
-			else
-				state = s1release;
+			state = wait;
 		break;
 		case reset:
 			if(lock == 0x00)
