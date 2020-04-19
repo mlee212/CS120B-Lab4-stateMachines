@@ -40,7 +40,7 @@ void Tick() {
 				state = s_1not;
 			break;
 		case s_1pressed:
-			if((tmpA & 0x01) == 0x01) 
+			if((tmpA & 0x01) == 0x00) 
 				state = s_0not;
 			else
 				state = s_1pressed;

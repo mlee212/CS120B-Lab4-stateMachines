@@ -37,16 +37,12 @@ void Tick() {
 		case add:
 			if((but1 + but2) == 0x03)
 				state = reset;
-			else if((but1 + but2) == 0x00)
-				state = wait;
 			else
 				state = addW;
 		break;
 		case sub:
 			if((but1 + but2) == 0x03)
 				state = reset;
-			else if((but1 + but2) == 0x00)
-				state = wait;
 			else
 				state = subW;
 
@@ -106,7 +102,7 @@ int main(void) {
     /* Insert your solution below */
     
     state = start;
-    
+    sum = 7;
     while (1) {
 	but1 = PINA & 0x01;
 	but2 = PINA & 0x02;

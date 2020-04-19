@@ -43,7 +43,11 @@ test "PINA: 0x01, 0x00, 0x02 => PORTB: 1, state: pressA1"
 set state = start
 setPINA 0x01
 continue 2
-expectPORTC 0x08
+setPINA 0x00
+continue 2
+setPINA 0x01
+continue 2
+expectPORTC 0x09
 checkResult
 
 
