@@ -50,6 +50,13 @@ continue 2
 expectPORTB 0x01
 checkResult
 
+test "PINA: 0x01, 0x00, 0x02 => PORTB: 1, state: pressA1"
+set state = start
+setPINA 0x80
+continue 2
+expectPORTB 0x00
+checkResult
+
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
