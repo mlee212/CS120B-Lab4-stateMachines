@@ -22,25 +22,25 @@ void Tick() {
 	switch(state) {
 		case start: state = s_0not; break;
 		case s_0not: 
-			if((PINA & 0x01) == 0x01) 
+			if((tmpA & 0x01) == 0x01) 
 				state = s_0pressed;
 			else
 				state = s_0not;
 			break;
 		case s_0pressed: 
-			if((PINA & 0x01) == 0x00) 
+			if((tmpA & 0x01) == 0x00) 
 				state = s_1not;
 			else
 				state = s_0pressed;
 			break;
 		case s_1not: 
-			if((PINA & 0x01) == 0x01) 
+			if((tmpA & 0x01) == 0x01) 
 				state = s_1pressed;
 			else
 				state = s_1not;
 			break;
 		case s_1pressed:
-			if((PINA & 0x01) == 0x01) 
+			if((tmpA & 0x01) == 0x01) 
 				state = s_0not;
 			else
 				state = s_1pressed;
@@ -49,9 +49,9 @@ void Tick() {
 
 	switch(state) {
 		case start: tmpB = 0x01; break;
-		case s_0not: tmpB = 0x02; break;
+		case s_0not: tmpB = 0x01; break;
 		case s_0pressed: tmpB = 0x02; break;
-		case s_1not: tmpB = 0x01; break;
+		case s_1not: tmpB = 0x02; break;
 		case s_1pressed: tmpB = 0x01; break;
 	}
 	
