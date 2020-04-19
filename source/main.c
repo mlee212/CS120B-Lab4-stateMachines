@@ -48,11 +48,11 @@ void Tick() {
 	}
 
 	switch(state) {
-		case start: PORTB = 0x01; break;
-		case s_0not: PORTB = 0x02; break;
-		case s_0pressed: PORTB = 0x02; break;
-		case s_1not: PORTB = 0x01; break;
-		case s_1pressed: PORTB = 0x01; break;
+		case start: tmpB = 0x01; break;
+		case s_0not: tmpB = 0x02; break;
+		case s_0pressed: tmpB = 0x02; break;
+		case s_1not: tmpB = 0x01; break;
+		case s_1pressed: tmpB = 0x01; break;
 	}
 	
 }
