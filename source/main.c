@@ -94,7 +94,7 @@ void Tick() {
 
 	switch(state) {
 		case start: tmpB = 0x00; break;
-		case wait: break;
+		case wait: tmpB = 0x00; break;
 		case s0: break;
 		case s0release: break;
 		case s1: tmpB = 0x01; break;
@@ -123,6 +123,7 @@ int main(void) {
 	but1 = PINA & 0x01;
 	but2 = PINA & 0x02;
 	but3 = PINA & 0x04;
+	lock = PINA & 0x80;
 	Tick();
 	PORTB = tmpB;
     }
