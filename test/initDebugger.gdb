@@ -9,7 +9,7 @@ set $failed=0
 set $tests=0
 
 # Break at the top of the while loop (:# needs to have the line number at the top of the while(1))
-break main.c:125
+break main.c:96
 commands
 silent
 # Add all variables you want to inspect (printPORTx f, printPINx f)
